@@ -1,5 +1,7 @@
+import styles from './StopWatch.module.scss';
 import { useState } from "react";
 import { useEffect } from "react";
+
 
 const StopWatch = () => {
     
@@ -20,7 +22,7 @@ const StopWatch = () => {
         return () => {
             clearInterval(timer)
         }
-    }, [start, pause, time]);
+    }, [start, pause]);
 
     //method to start time
     const timeStart = () => {
@@ -49,10 +51,13 @@ const StopWatch = () => {
     const hours = Math.floor((time / 1000 / 60 / 60) % 24);
    
     return (
-         <div>{hours.toString().padStart(2, "0")}:{minutes.toString().padStart(2, "0")}:{seconds.toString().padStart(2, "0")}:{milliseconds.toString().padStart(2, "0")}
-         <button onClick={() => timeStart()}>START</button>
-         <button onClick={() => timePause()}>PAUSE</button>
-         <button onClick={() => timeReset()}>RESET</button>
+         <div className={styles.maindiv}>
+            <div><span>{hours.toString().padStart(2, "0")}:{minutes.toString().padStart(2, "0")}:{seconds.toString().padStart(2, "0")}:{milliseconds.toString().padStart(2, "0")}</span></div>
+            <div>
+                <button onClick={() => timeStart()}>START</button>
+                <button onClick={() => timePause()}>PAUSE</button>
+                <button onClick={() => timeReset()}>RESET</button>
+            </div>
          </div>
          
     );

@@ -1,0 +1,26 @@
+@import '../../styles/settings.scss';
+.maindiv {
+    text-align: center;
+    background-color: $color-dark;
+    width: 300px;
+    margin: 10px auto;
+}
+
+span {
+    color: $color-light;
+    font-size: 40px;
+}
+
+button {
+    background-color: $color-button;
+    margin: 10px;
+    color: $color-light;
+    font-weight: 700;
+    width: 70px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+}
